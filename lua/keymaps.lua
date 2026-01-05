@@ -69,3 +69,6 @@ vim.keymap.set({"n", "v"}, "L", "<C-w>l")
 --view man page
 vim.keymap.set("n", "<C-i>", "K", {noremap = true})
 vim.keymap.set("n", "<Tab>", "<C-i>", {noremap = true})
+
+--easy quit all
+vim.cmd("command Leave wall|qa!")
