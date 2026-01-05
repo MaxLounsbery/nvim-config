@@ -3,16 +3,24 @@ vim.cmd("colorscheme tokyodark")
 vim.opt.termguicolors = true
 require("bufferline").setup {}
 
-require('lazy').setup({
-  'nvim-treesitter/nvim-treesitter',
-  lazy = false,
-  build = ':TSUpdate'
+require("colorizer").setup({
+  user_default_options = {
+    names = false,
+  },
 })
+
+require('lualine').setup {
+  component_separators = { left = '', right = '' },
+  section_separators = { left = '', right = '' },
+  sections = {
+    lualine_x = {'filetype'},
+  },
+}
 
 require('goto-preview').setup {
   width = 120, -- Width of the floating window
   height = 15, -- Height of the floating window
-  border = {"↖", "─" ,"┐", "│", "┘", "─", "└", "│"}, -- Border characters of the floating window
+  border = { "↖", "─", "┐", "│", "┘", "─", "└", "│" }, -- Border characters of the floating window
   default_mappings = false, -- Bind default mappings
   debug = false, -- Print debug information
   opacity = nil, -- 0-100 opacity level of the floating window where 100 is fully transparent.
@@ -24,16 +32,16 @@ require('goto-preview').setup {
     telescope = require("telescope.themes").get_dropdown({ hide_preview = false })
   },
   -- These two configs can also be passed down to the goto-preview definition and implementation calls for one off "peak" functionality.
-  focus_on_open = true, -- Focus the floating window when opening it.
-  dismiss_on_move = false, -- Dismiss the floating window when moving the cursor.
-  force_close = true, -- passed into vim.api.nvim_win_close's second argument. See :h nvim_win_close
-  bufhidden = "wipe", -- the bufhidden option to set on the floating window. See :h bufhidden
-  stack_floating_preview_windows = true, -- Whether to nest floating windows
-  same_file_float_preview = true, -- Whether to open a new floating window for a reference within the current file
+  focus_on_open = true,                                        -- Focus the floating window when opening it.
+  dismiss_on_move = false,                                     -- Dismiss the floating window when moving the cursor.
+  force_close = true,                                          -- passed into vim.api.nvim_win_close's second argument. See :h nvim_win_close
+  bufhidden = "wipe",                                          -- the bufhidden option to set on the floating window. See :h bufhidden
+  stack_floating_preview_windows = true,                       -- Whether to nest floating windows
+  same_file_float_preview = true,                              -- Whether to open a new floating window for a reference within the current file
   preview_window_title = { enable = true, position = "left" }, -- Whether to set the preview window title as the filename
-  zindex = 1, -- Starting zindex for the stack of floating windows
-  vim_ui_input = true, -- Whether to override vim.ui.input with a goto-preview floating window
- 
+  zindex = 1,                                                  -- Starting zindex for the stack of floating windows
+  vim_ui_input = true,                                         -- Whether to override vim.ui.input with a goto-preview floating window
+
 }
 
 require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
@@ -59,7 +67,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     cursorline = true,
     cursorlineopt = "both",
     debounce_delay = 15,
-    side = "right",     --CHANGED HERE
+    side = "right", --CHANGED HERE
     preserve_window_proportions = false,
     number = false,
     relativenumber = false,
@@ -313,4 +321,4 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
       watcher = false,
     },
   },
-}     -- END_DEFAULT_OPTS
+} -- END_DEFAULT_OPTS

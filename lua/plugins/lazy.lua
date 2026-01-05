@@ -34,6 +34,15 @@ require("lazy").setup({
       vim.cmd [[colorscheme tokyodark]]
     end,
   },
+  -- lualine
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
+  },
+  -- gitsigns
+  {
+    "lewis6991/gitsigns.nvim",
+  },
   --telescope
   {
     'nvim-telescope/telescope.nvim',
@@ -81,6 +90,13 @@ require("lazy").setup({
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
     }
+  },
+  -- colorizer
+  {
+    "catgoose/nvim-colorizer.lua",
+    event = "BufReadPre",
+    opts = { -- set to setup table
+    },
   },
 
   {

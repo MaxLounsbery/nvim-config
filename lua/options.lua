@@ -7,7 +7,7 @@ vim.opt.shiftwidth = 2        --indent operations use 2 spaces
 vim.opt.expandtab = true      --pressing <Tab> inserts spaces instead of a tab
 vim.opt.softtabstop = 2       --<Tab> in insert mode counts as 2 spaces
 
-vim.opt.scrolloff = 9         --change how early the screen start scrolling
+vim.opt.scrolloff = 255       --change how early the screen start scrolling
 
 vim.opt.ignorecase = true     --smarter searching
 vim.opt.smartcase = true
