@@ -60,12 +60,34 @@ require("lazy").setup({
     },
     config = function()
       require("nvim-tree").setup {}
-    end,
+    end
   },
 
   --buffers as tabs
   { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
 
+  --debugging
+  {
+    'mfussenegger/nvim-dap',
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+      "theHamsta/nvim-dap-virtual-text",
+    },
+    config = function()
+      require("nvim-dap").setup {}
+    end,
+  },
+
+  --testing
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter"
+    }
+  },
   --comments
   {
     "terrortylor/nvim-comment",

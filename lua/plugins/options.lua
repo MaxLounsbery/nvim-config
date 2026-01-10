@@ -13,10 +13,16 @@ require('lualine').setup {
   component_separators = { left = '', right = '' },
   section_separators = { left = '', right = '' },
   sections = {
-    lualine_x = {'filetype'},
+    lualine_x = { 'filetype' },
   },
 }
 
+require('nvim-dap').setup {
+
+  -- require("dapui").setup() 
+}
+
+-- I did not know how configs worked when I put these in here... Just keep it at the bottom
 require('goto-preview').setup {
   width = 120, -- Width of the floating window
   height = 15, -- Height of the floating window
