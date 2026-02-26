@@ -74,7 +74,7 @@ require("lazy").setup({
       "theHamsta/nvim-dap-virtual-text",
     },
     config = function()
-      require("nvim-dap").setup {}
+      -- require("nvim-dap").setup {}
     end,
   },
 

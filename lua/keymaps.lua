@@ -1,6 +1,9 @@
 -- space bar leader
 vim.g.mapleader = " "
 
+-- save quickly
+vim.keymap.set("n", "<C-s>", ":w<cr>")
+
 -- yank to clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
@@ -33,8 +36,13 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Paste in visual mode without yanking replaced text
 vim.keymap.set("x", "p", [["_dP]])
 
+-- Paste from 0 register (only last thing yanked)
+vim.keymap.set({ "n", "v" }, "<C-p>", "\"0p")
+vim.keymap.set({ "n", "v" }, "<C-p>", "\"0p")
+
 -- yank to clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>c", [["+y]])
 -- yank line to clipboard
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
@@ -44,6 +52,9 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 -- map Ctrl-c to Escape
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<C-c>", ":q<cr>")
+
+-- in insert mode, clear line
+vim.keymap.set("i", "<C-s>", "<Esc>S")
 
 -- move lines up/down more quickly
 vim.keymap.set({ "v", "n", }, "<Down>", "10j")
@@ -55,7 +66,7 @@ vim.keymap.set({ "v", "n", }, "<C-k>", "5k")
 vim.keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- edit config
-vim.keymap.set("n", "<leader>c", ":e ~/.config/nvim<cr>")
+vim.keymap.set("n", "<leader>C", ":e ~/.config/nvim<cr>")
 
 -- better terminal escape
 vim.keymap.set("t", "<esc>", "<Esc> <C-\\><C-n>", { noremap = true })

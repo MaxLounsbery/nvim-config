@@ -17,10 +17,10 @@ require('lualine').setup {
   },
 }
 
-require('nvim-dap').setup {
-
-  -- require("dapui").setup() 
-}
+-- require('nvim-dap').setup {
+--
+--   -- require("dapui").setup() 
+-- }
 
 -- I did not know how configs worked when I put these in here... Just keep it at the bottom
 require('goto-preview').setup {
@@ -73,7 +73,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     cursorline = true,
     cursorlineopt = "both",
     debounce_delay = 15,
-    side = "right", --CHANGED HERE
+    side = "left", --CHANGED HERE
     preserve_window_proportions = false,
     number = false,
     relativenumber = false,
