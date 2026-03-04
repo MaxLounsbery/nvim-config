@@ -22,10 +22,10 @@ vim.keymap.set("i", "<Left>", "<Esc>:bp<cr>")
 vim.keymap.set("n", "<Right>", ":bn<cr>")
 vim.keymap.set("i", "<Right>", "<Esc>:bn<cr>")
 vim.keymap.set("n", "<leader>d", ":bd!<cr>")
-vim.keymap.set("n", "<C-Up>", ":bd!<cr>")
 vim.keymap.set("n", "<C-Right>", ":BufferLineCloseRight<cr>")
 vim.keymap.set("n", "<C-Left>", ":BufferLineCloseLeft<cr>")
 vim.keymap.set("n", "<C-Down>", ":BufferLineCloseOthers<cr>")
+vim.keymap.set("n", "<C-Up>", ":bd!<cr>:ene<cr>:bn<cr>")-- close current buffer, open a new one
 
 -- persistence binds
 vim.keymap.set("n", "<leader>pd", function() require("persistence").load() end)
