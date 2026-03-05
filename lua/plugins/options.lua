@@ -1,7 +1,6 @@
 vim.cmd("colorscheme tokyodark")
 
 vim.opt.termguicolors = true
-require("bufferline").setup {}
 
 require("colorizer").setup({
   user_default_options = {
@@ -15,6 +14,18 @@ require('lualine').setup {
   sections = {
     lualine_x = { 'filetype' },
   },
+}
+
+require('bufferline').setup {
+  options = {
+    numbers = "buffer_id",
+    indicator = {
+      style = 'underline'
+    },
+    pick = {
+      alphabet = "123456789abcdefghijklmnopqrstuvwxyz"
+    }
+  }
 }
 
 -- require('nvim-dap').setup {
